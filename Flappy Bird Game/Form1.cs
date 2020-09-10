@@ -42,7 +42,7 @@ namespace Flappy_Bird_Game
             FlappyBird.Top += gravity;
             PipeBottom.Left -= pipeSpeed;
             PipeTop.Left -= pipeSpeed;
-            ScoreText.Text = score.ToString();
+            ScoreText.Text = "Score: " + score;
 
 
             if (PipeBottom.Left < -150)
@@ -56,11 +56,20 @@ namespace Flappy_Bird_Game
                 score++;
             }
 
-            if (FlappyBird.Bounds.IntersectsWith(PipeBottom.Bounds) || FlappyBird.Bounds.IntersectsWith(PipeTop.Bounds) || FlappyBird.Bounds.IntersectsWith(Ground.Bounds))
+            if (FlappyBird.Bounds.IntersectsWith(PipeBottom.Bounds) || FlappyBird.Bounds.IntersectsWith(PipeTop.Bounds) || FlappyBird.Bounds.IntersectsWith(Ground.Bounds) || FlappyBird.Top < -25)
             {
                 endGame();
             }
 
+            if (score > 5)
+            {
+                pipeSpeed = 15;
+            }
+
+            if (FlappyBird.Top < 25)
+            {
+                endGame();
+            }
 
 
 
@@ -92,7 +101,7 @@ namespace Flappy_Bird_Game
        private void endGame()
         {
             gameTimer.Stop();
-            ScoreText.Text += "Game Over!";
+            ScoreText.Text += " Game Over!";
         }
 
     }
