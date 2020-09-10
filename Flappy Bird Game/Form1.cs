@@ -12,7 +12,9 @@ namespace Flappy_Bird_Game
 {
     public partial class Form1 : Form
     {
-
+        int pipeSpeed = 8;
+        int gravity = 5;
+        int score = 0;
 
 
         public Form1()
@@ -47,11 +49,18 @@ namespace Flappy_Bird_Game
 
         private void gamekeyisdown(object sender, KeyEventArgs e)
         {
-
+            if (e.KeyCode == Keys.Space)
+            {
+                gravity = -5;
+            }
         }
 
         private void gamekeyisup(object sender, KeyEventArgs e)
         {
+            if (e.KeyCode == Keys.Space)
+            {
+                gravity = 5;
+            }
 
         }
     }
