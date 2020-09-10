@@ -64,7 +64,41 @@ namespace Flappy_Bird_Game
             if (score > 5)
             {
                 pipeSpeed = 15;
+            } 
+
+            if (score > 25)
+            {
+                pipeSpeed = 25;
             }
+
+
+            if (score > 50)
+            {
+                pipeSpeed = 40;
+            }
+
+
+            if (score > 100)
+            {
+                pipeSpeed = 60;
+            }
+
+
+            if (score > 200)
+            {
+                pipeSpeed = 90;
+            }
+
+            if (score > 500)
+            {
+                pipeSpeed = 125;
+            }
+
+            if (score > 1000)
+            {
+                pipeSpeed = 175;
+            }
+
 
             if (FlappyBird.Top < 25)
             {
